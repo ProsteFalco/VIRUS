@@ -20,7 +20,8 @@ public class APSController : MonoBehaviour
     {
         APS = Camera.main.GetComponent<HandWashingUpgrade>().current_APS +
               Camera.main.GetComponent<FaceMaskUpgrade>().current_APS +
-              Camera.main.GetComponent<HandSanitizerUpgrade>().current_APS;
+              Camera.main.GetComponent<HandSanitizerUpgrade>().current_APS +
+              Camera.main.GetComponent<PillsUpgrade>().current_APS;
     }
     public IEnumerator APSCoroutine()
     {

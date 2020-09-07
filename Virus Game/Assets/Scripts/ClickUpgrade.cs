@@ -10,7 +10,7 @@ public class ClickUpgrade : MonoBehaviour
 
     private int level = 1;
     private float current_APC = 1f;
-    private float apc_multiplier = 0.09f;
+    private float apc_multiplier = 0.12f;
     private float upgradePrice = 25f;
     private float price_multiplier = 0.15f;
 
