@@ -17,7 +17,7 @@ public class FaceMaskUpgrade : MonoBehaviour
 
     void Start()
     {
-        UpgradeInfo.text = "CURRENT APS : " + 0 + "\n" + "NEW APS : " + 0.5.ToString() + "\n" + "LEVEL : " + Level;
+        UpgradeInfo.text = "CURRENT APS : " + 0 + "\n" + "NEW APS : " + 3.ToString() + "\n" + "LEVEL : " + Level;
         UpgradePrice.text = "180";
     }
 
