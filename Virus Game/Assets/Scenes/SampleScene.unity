@@ -433,7 +433,7 @@ RectTransform:
   m_Children:
   - {fileID: 1921349137}
   m_Father: {fileID: 714929950}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -477,6 +477,137 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 323690809}
+  m_CullTransparentMesh: 0
+--- !u!1 &354189687
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 354189688}
+  - component: {fileID: 354189691}
+  - component: {fileID: 354189690}
+  - component: {fileID: 354189689}
+  m_Layer: 5
+  m_Name: Button
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &354189688
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354189687}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.77864, y: 0.77864, z: 0.77864}
+  m_Children: []
+  m_Father: {fileID: 714929950}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 289, y: 458}
+  m_SizeDelta: {x: 200, y: 200}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &354189689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354189687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 354189690}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 519420035}
+        m_TargetAssemblyTypeName: MoneyController, Assembly-CSharp
+        m_MethodName: CheatCode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &354189690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354189687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.92549026, g: 0.92549026, b: 0.92549026, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &354189691
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354189687}
   m_CullTransparentMesh: 0
 --- !u!1 &387036968
 GameObject:
@@ -915,9 +1046,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 519420033}
-        m_TargetAssemblyTypeName: UpgradeMenuController, Assembly-CSharp
-        m_MethodName: ClickUpgrade
+      - m_Target: {fileID: 519420034}
+        m_TargetAssemblyTypeName: ClickUpgrade, Assembly-CSharp
+        m_MethodName: ClickUpgradeButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -977,6 +1108,11 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420035}
+  - component: {fileID: 519420039}
+  - component: {fileID: 519420038}
+  - component: {fileID: 519420034}
+  - component: {fileID: 519420036}
   - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
@@ -1005,15 +1141,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8a12f670667ed244825a26ee7f1a0dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  virusPrefab: {fileID: 4385871066914626559, guid: 5529b3bb2ff7244448e611c3341bebb1, type: 3}
-  virusMoneyText: {fileID: 1625368898}
-  apsText: {fileID: 1316334448}
-  virusMoney: 0
-  virusGainPerClick: 1
-  virusGainPerSec: 0
   shadowPanel: {fileID: 323690809}
   upgradeMenuPanel: {fileID: 1614703131}
-  umc: {fileID: 519420033}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -1080,24 +1209,82 @@ MonoBehaviour:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e822031029b149a4b9d7a3bcfc5bd46e, type: 3}
+  m_Script: {fileID: 11500000, guid: d861327291d3c0b46b5b7d9783e1c1fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gm: {fileID: 519420030}
-  virusMoney: 0
-  APS: 0
-  ClickUpgradeInfo: {fileID: 566652664}
-  ClickUpgradePrice: {fileID: 6463538}
-  current_APC: 1
-  APC_multiplier: 0.4
-  clickUpgradePrice: 25
-  price_multiplier: 1.6
-  FaceMaskInfo: {fileID: 1850560089}
-  FaceMaskUpgradePrice: {fileID: 664679597}
-  faceMaskAquired: 0
-  HandWashingInfo: {fileID: 1823079063}
-  HandWashingUpgradePrice: {fileID: 1849627906}
-  handWashingAquired: 0
+  virusPrefab: {fileID: 4385871066914626559, guid: 5529b3bb2ff7244448e611c3341bebb1, type: 3}
+  click: 1
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd07ff75df3474f4eaa02c34489528de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UpgradeInfo: {fileID: 566652664}
+  UpgradePrice: {fileID: 6463538}
+--- !u!114 &519420035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f894636214738894b973a9f7625fbdb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  money: 0
+  moneyText: {fileID: 1625368898}
+  apsText: {fileID: 1316334448}
+--- !u!114 &519420036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17135a63183549f4890a8cc6871b3b20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &519420038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 663928cd7f9f1fa4f9f89441a4ab9568, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UpgradeInfo: {fileID: 1850560089}
+  UpgradePrice: {fileID: 664679597}
+  current_APS: 0
+--- !u!114 &519420039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beaf77e08cb953c4ea7515bb4d782b9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UpgradeInfo: {fileID: 1823079063}
+  UpgradePrice: {fileID: 1849627906}
+  current_APS: 0
 --- !u!1 &566652662
 GameObject:
   m_ObjectHideFlags: 0
@@ -1338,9 +1525,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 519420030}
-        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
-        m_MethodName: VirusClick
+      - m_Target: {fileID: 519420033}
+        m_TargetAssemblyTypeName: ClickController, Assembly-CSharp
+        m_MethodName: Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1479,6 +1666,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 685110616}
+  - {fileID: 354189688}
   - {fileID: 1286142611}
   - {fileID: 864442495}
   - {fileID: 323690810}
@@ -1525,7 +1713,7 @@ RectTransform:
   - {fileID: 1956147202}
   - {fileID: 387036969}
   m_Father: {fileID: 714929950}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -2020,9 +2208,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 519420033}
-        m_TargetAssemblyTypeName: UpgradeMenuController, Assembly-CSharp
-        m_MethodName: FaceMaskUpgrade
+      - m_Target: {fileID: 519420038}
+        m_TargetAssemblyTypeName: FaceMaskUpgrade, Assembly-CSharp
+        m_MethodName: FaceMaskUpgradeButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2103,7 +2291,7 @@ RectTransform:
   - {fileID: 1343656890}
   - {fileID: 1316334447}
   m_Father: {fileID: 714929950}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2484,7 +2672,7 @@ RectTransform:
   - {fileID: 397859215}
   - {fileID: 475202503}
   m_Father: {fileID: 714929950}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2689,9 +2877,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 519420033}
-        m_TargetAssemblyTypeName: UpgradeMenuController, Assembly-CSharp
-        m_MethodName: HandWashingUpgrade
+      - m_Target: {fileID: 519420039}
+        m_TargetAssemblyTypeName: HandWashingUpgrade, Assembly-CSharp
+        m_MethodName: HandWashingUpgradeButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
