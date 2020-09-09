@@ -11,14 +11,39 @@ public class HandSanitizerUpgrade : MonoBehaviour
     private int Level = 0;
     private bool handSanitizerAquired = false;
     public float current_APS = 0f;
+    private float first_APS = 40f;
     private float aps_multiplier = 0.09f;
-    private float upgradePrice = 6900f;
-    private float price_multiplier = 0.15f;
+    private float upgradePrice = 9700f;
+    private float price_multiplier = 0.1f;
 
+    private void Awake()
+    {
+        if (PlayerPrefs.GetFloat("handSanitizerAPS") != 0)
+        {
+            Level = PlayerPrefs.GetInt("handSanitizerLevel");
+            current_APS = PlayerPrefs.GetFloat("handSanitizerAPS");
+            upgradePrice = PlayerPrefs.GetFloat("handSanitizerPrice");
+        }
+        else
+            return;
+
+    }
     void Start()
     {
-        UpgradeInfo.text = "CURRENT APS : " + 0 + "\n" + "NEW APS : " + 40.ToString() + "\n" + "LEVEL : " + Level;
-        UpgradePrice.text = "6900";
+        if (current_APS == 0)
+        {
+            UpgradeInfo.text = "CURRENT APS : " + Camera.main.GetComponent<PricePrintController>().ValuePrintout(current_APS) + "\n" + "NEW APS : " + first_APS.ToString() + "\n" + "LEVEL : " + Level;
+        }
+        else
+        {
+            float new_APS = (float)System.Math.Round((current_APS * aps_multiplier), 1) + current_APS;
+
+            UpgradeInfo.text = "CURRENT APS : " + Camera.main.GetComponent<PricePrintController>().ValuePrintout(current_APS) + "\n" + "NEW APS : " + Camera.main.GetComponent<PricePrintController>().ValuePrintout(new_APS) + "\n" + "LEVEL : " + Level;
+
+        }
+
+
+        UpgradePrice.text = Camera.main.GetComponent<PricePrintController>().ValuePrintout(upgradePrice);
     }
 
     public void HandSanitizerUpgradeButton()
@@ -30,12 +55,13 @@ public class HandSanitizerUpgrade : MonoBehaviour
             {
                 handSanitizerAquired = true;
                 Camera.main.GetComponent<MoneyController>().Buy(upgradePrice);
-                current_APS = 40f;
+                current_APS = first_APS;
                 float new_APS = (float)System.Math.Round((current_APS * aps_multiplier), 1) + current_APS;
                 upgradePrice += (float)System.Math.Round((upgradePrice * price_multiplier), 1);
                 Level++;
-                UpgradeInfo.text = "CURRENT APS : " + current_APS + "\n" + "NEW APS : " + new_APS.ToString() + "\n" + "LEVEL : " + Level;
-                UpgradePrice.text = upgradePrice.ToString();
+                UpgradeInfo.text = "CURRENT APS : " + Camera.main.GetComponent<PricePrintController>().ValuePrintout(current_APS) + "\n" + "NEW APS : " + Camera.main.GetComponent<PricePrintController>().ValuePrintout(new_APS) + "\n" + "LEVEL : " + Level;
+                UpgradePrice.text = Camera.main.GetComponent<PricePrintController>().ValuePrintout(upgradePrice);
+                Camera.main.GetComponent<PlayerPrefsSaving>().PlayerPrefsSaveHandSanitizer(Level, current_APS, upgradePrice);
             }
             else if (handSanitizerAquired == true)
             {
@@ -44,10 +70,11 @@ public class HandSanitizerUpgrade : MonoBehaviour
                 float new_APS = (float)System.Math.Round((current_APS * aps_multiplier), 1) + current_APS;
                 upgradePrice += (float)System.Math.Round((upgradePrice * price_multiplier), 1);
                 Level++;
-                UpgradeInfo.text = "CURRENT APS : " + current_APS + "\n" + "NEW APS : " + new_APS.ToString() + "\n" + "LEVEL : " + Level;
-                UpgradePrice.text = upgradePrice.ToString();
+                UpgradeInfo.text = "CURRENT APS : " + Camera.main.GetComponent<PricePrintController>().ValuePrintout(current_APS) + "\n" + "NEW APS : " + Camera.main.GetComponent<PricePrintController>().ValuePrintout(new_APS) + "\n" + "LEVEL : " + Level;
+                UpgradePrice.text = Camera.main.GetComponent<PricePrintController>().ValuePrintout(upgradePrice);
+                Camera.main.GetComponent<PlayerPrefsSaving>().PlayerPrefsSaveHandSanitizer(Level, current_APS, upgradePrice);
             }
         }
-
+      
     }
 }

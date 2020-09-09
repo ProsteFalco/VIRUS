@@ -9,9 +9,14 @@ public class MoneyController : MonoBehaviour
     [SerializeField] private Text moneyText;
     [SerializeField] private Text apsText;
 
+    private void Start()
+    {
+        money = PlayerPrefs.GetFloat("money");
+    }
     void Update()
     {
         MoneyPrintout();
+        Camera.main.GetComponent<PlayerPrefsSaving>().PlayerPrefsSaveMoney(money);
     }
 
     public void AddMoney(float money2Add)
@@ -21,36 +26,9 @@ public class MoneyController : MonoBehaviour
 
     private void MoneyPrintout()
     {
-        if (money < 1000)
-        {
-            moneyText.text = System.Math.Round(money,1).ToString();
-        }
-        else if (money >= 1000 && money < 1000000)
-        {
-            moneyText.text = System.Math.Round(money / 1000, 2) + "K".ToString();
-        }
-        else if (money >= 1000000 && money < 1000000000)
-        {
-            moneyText.text = System.Math.Round(money / 1000000, 2) + "M".ToString();
-        }
-        else if (money >= 1000000000 && money < 1000000000000)
-        {
-            moneyText.text = System.Math.Round(money / 1000000000, 2) + "G".ToString();
-        }
-        else if (money >= 1000000000000 && money < 1000000000000000)
-        {
-            moneyText.text = System.Math.Round(money / 1000000000000, 2) + "T".ToString();
-        }
-        else if (money >= 1000000000000000 && money < 1000000000000000000)
-        {
-            moneyText.text = System.Math.Round(money / 1000000000000000, 2) + "P".ToString();
-        }
-        else if (money >= 1000000000000000000 && money < 10000000000000000000)
-        {
-            moneyText.text = System.Math.Round(money / 1000000000000000000, 2) + "E".ToString();
-        }
-        else
-            moneyText.text = "Error";
+
+        moneyText.text = Camera.main.GetComponent<PricePrintController>().ValuePrintout(money);
+
 
 
     }
