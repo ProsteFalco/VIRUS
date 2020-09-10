@@ -18,7 +18,7 @@ public class FaceMaskUpgrade : MonoBehaviour
     private float price_multiplier = 0.1f;
 
 
-    private void Awake()
+   /* private void Awake()
     {
         if (PlayerPrefs.GetFloat("faceMaskAPS") != 0)
         {
@@ -29,7 +29,7 @@ public class FaceMaskUpgrade : MonoBehaviour
         else
             return;
         
-    }
+    }*/
     void Start()
     {
         if (current_APS == 0)
@@ -64,7 +64,7 @@ public class FaceMaskUpgrade : MonoBehaviour
                 Level++;
                 UpgradeInfo.text = "CURRENT APS : " + Camera.main.GetComponent<PricePrintController>().ValuePrintout(current_APS) + "\n" + "NEW APS : " + Camera.main.GetComponent<PricePrintController>().ValuePrintout(new_APS) + "\n" + "LEVEL : " + Level;
                 UpgradePrice.text = Camera.main.GetComponent<PricePrintController>().ValuePrintout(upgradePrice);
-                Camera.main.GetComponent<PlayerPrefsSaving>().PlayerPrefsSaveFaceMask(Level, current_APS, upgradePrice);
+               // Camera.main.GetComponent<PlayerPrefsSaving>().PlayerPrefsSaveFaceMask(Level, current_APS, upgradePrice);
             }
             else if (faceMaskAquired == true)
             {
@@ -75,7 +75,7 @@ public class FaceMaskUpgrade : MonoBehaviour
                 Level++;
                 UpgradeInfo.text = "CURRENT APS : " + Camera.main.GetComponent<PricePrintController>().ValuePrintout(current_APS) + "\n" + "NEW APS : " + Camera.main.GetComponent<PricePrintController>().ValuePrintout(new_APS) + "\n" + "LEVEL : " + Level;
                 UpgradePrice.text = Camera.main.GetComponent<PricePrintController>().ValuePrintout(upgradePrice);
-                Camera.main.GetComponent<PlayerPrefsSaving>().PlayerPrefsSaveFaceMask(Level, current_APS, upgradePrice);
+              //  Camera.main.GetComponent<PlayerPrefsSaving>().PlayerPrefsSaveFaceMask(Level, current_APS, upgradePrice);
             }
         }
         

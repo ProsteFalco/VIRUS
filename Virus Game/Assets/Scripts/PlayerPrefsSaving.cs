@@ -7,7 +7,7 @@ public class PlayerPrefsSaving : MonoBehaviour
 
     public void Start()
     {
-       // PlayerPrefs.DeleteAll();
+       //PlayerPrefs.DeleteAll();
     }
     public void PlayerPrefsSaveFaceMask(int faceMaskLevel, float faceMaskAPS, float faceMaskPrice)
     {

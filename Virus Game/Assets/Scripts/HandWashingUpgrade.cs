@@ -15,7 +15,7 @@ public class HandWashingUpgrade : MonoBehaviour
     private float aps_multiplier = 0.09f;
     private float upgradePrice = 1400f;
     private float price_multiplier = 0.1f;
-    private void Awake()
+   /* private void Awake()
     {
         if (PlayerPrefs.GetFloat("handWashingAPS") != 0)
         {
@@ -26,7 +26,7 @@ public class HandWashingUpgrade : MonoBehaviour
         else
             return;
 
-    }
+    }*/
     void Start()
     {
         /**/
@@ -62,7 +62,7 @@ public class HandWashingUpgrade : MonoBehaviour
                 Level++;
                 UpgradeInfo.text = "CURRENT APS : " + Camera.main.GetComponent<PricePrintController>().ValuePrintout(current_APS) + "\n" + "NEW APS : " + Camera.main.GetComponent<PricePrintController>().ValuePrintout(new_APS) + "\n" + "LEVEL : " + Level;
                 UpgradePrice.text = Camera.main.GetComponent<PricePrintController>().ValuePrintout(upgradePrice);
-                Camera.main.GetComponent<PlayerPrefsSaving>().PlayerPrefsSaveHandWashing(Level, current_APS, upgradePrice);
+               // Camera.main.GetComponent<PlayerPrefsSaving>().PlayerPrefsSaveHandWashing(Level, current_APS, upgradePrice);
             }
             else if (handWashingAquired == true)
             {
@@ -73,7 +73,7 @@ public class HandWashingUpgrade : MonoBehaviour
                 Level++;
                 UpgradeInfo.text = "CURRENT APS : " + Camera.main.GetComponent<PricePrintController>().ValuePrintout(current_APS) + "\n" + "NEW APS : " + Camera.main.GetComponent<PricePrintController>().ValuePrintout(new_APS) + "\n" + "LEVEL : " + Level;
                 UpgradePrice.text = Camera.main.GetComponent<PricePrintController>().ValuePrintout(upgradePrice);
-                Camera.main.GetComponent<PlayerPrefsSaving>().PlayerPrefsSaveHandWashing(Level, current_APS, upgradePrice);
+                //Camera.main.GetComponent<PlayerPrefsSaving>().PlayerPrefsSaveHandWashing(Level, current_APS, upgradePrice);
             }
         }
 

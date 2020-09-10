@@ -15,7 +15,7 @@ public class PillsUpgrade : MonoBehaviour
     private float aps_multiplier = 0.09f;
     private float upgradePrice = 32400f;
     private float price_multiplier = 0.1f;
-    private void Awake()
+    /*private void Awake()
     {
         if (PlayerPrefs.GetFloat("pillsAPS") != 0)
         {
@@ -25,8 +25,9 @@ public class PillsUpgrade : MonoBehaviour
         }
         else
             return;
+    }*/
 
-    }
+
     void Start()
     {
         /**/
@@ -62,7 +63,7 @@ public class PillsUpgrade : MonoBehaviour
                 Level++;
                 UpgradeInfo.text = "CURRENT APS : " + Camera.main.GetComponent<PricePrintController>().ValuePrintout(current_APS) + "\n" + "NEW APS : " + Camera.main.GetComponent<PricePrintController>().ValuePrintout(new_APS) + "\n" + "LEVEL : " + Level;
                 UpgradePrice.text = Camera.main.GetComponent<PricePrintController>().ValuePrintout(upgradePrice);
-                Camera.main.GetComponent<PlayerPrefsSaving>().PlayerPrefsSavePills(Level, current_APS, upgradePrice);
+                //Camera.main.GetComponent<PlayerPrefsSaving>().PlayerPrefsSavePills(Level, current_APS, upgradePrice);
             }
             else if (pillsAquired == true)
             {
@@ -73,7 +74,7 @@ public class PillsUpgrade : MonoBehaviour
                 Level++;
                 UpgradeInfo.text = "CURRENT APS : " + Camera.main.GetComponent<PricePrintController>().ValuePrintout(current_APS) + "\n" + "NEW APS : " + Camera.main.GetComponent<PricePrintController>().ValuePrintout(new_APS) + "\n" + "LEVEL : " + Level;
                 UpgradePrice.text = Camera.main.GetComponent<PricePrintController>().ValuePrintout(upgradePrice);
-                Camera.main.GetComponent<PlayerPrefsSaving>().PlayerPrefsSavePills(Level, current_APS, upgradePrice);
+                //Camera.main.GetComponent<PlayerPrefsSaving>().PlayerPrefsSavePills(Level, current_APS, upgradePrice);
             }
         }
         
