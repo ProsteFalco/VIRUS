@@ -19,7 +19,7 @@ public class VirusPrefabController : MonoBehaviour
 
     public void Update()
     {
-        if (Mathf.Abs(startPosition.y - this.gameObject.transform.position.y) > 7)
+        if (Mathf.Abs(startPosition.y - this.gameObject.transform.position.y) > 9)
         {
             Destroy(this.gameObject);
         }

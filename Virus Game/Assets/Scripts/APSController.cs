@@ -9,6 +9,15 @@ public class APSController : MonoBehaviour
 
     void Start()
     {
+        AddAPS();
+        Camera.main.GetComponent<MoneyController>().ApsPrintout((float)System.Math.Round(APS, 1));
+
+        float toAdd = Camera.main.GetComponent<AFKCollector>().diffSecs() * APS;
+        Camera.main.GetComponent<MoneyController>().AddMoney(toAdd);
+        /*GameObject test;
+        test = GameObject.Find("DebugText");
+        test.GetComponent<Text>().text = "Bol si prec " + System.Math.Round((Camera.main.GetComponent<AFKCollector>().diffSecs() / 60), 1).ToString() + " minut a prislo tolkoto money: " + toAdd.ToString();*/
+
         StartCoroutine(APSCoroutine());
     }
     private void Update()
@@ -25,7 +34,10 @@ public class APSController : MonoBehaviour
     }
     public IEnumerator APSCoroutine()
     {
+
         Camera.main.GetComponent<MoneyController>().AddMoney(APS);
+
+        
         yield return new WaitForSeconds(1);
         StartCoroutine(APSCoroutine());
     }

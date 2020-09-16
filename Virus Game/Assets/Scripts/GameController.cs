@@ -9,14 +9,19 @@ public class GameController : MonoBehaviour
     public GameObject shadowPanel;
     public GameObject upgradeMenuPanel;
 
-    public GameObject AudioManagerObj;
+    private GameObject AudioManagerObj;
 
+
+    private void Start()
+    {
+        AudioManagerObj = GameObject.Find("AudioManager");
+    }
     public void UpgradeMenuButton()
     {
         upgradeMenuPanel.SetActive(true);
         shadowPanel.SetActive(true);
 
-        AudioManagerObj = GameObject.Find("AudioManager");
+        
         AudioManagerObj.GetComponent<AudioManager>().PitchDown();
     }
 
@@ -26,6 +31,11 @@ public class GameController : MonoBehaviour
         shadowPanel.SetActive(false);
 
         AudioManagerObj.GetComponent<AudioManager>().PitchUp();
+    }
+
+    public void ResearchScene()
+    {
+        Camera.main.GetComponent<LevelLoader>().LoadResearchScene();
     }
 
 }
