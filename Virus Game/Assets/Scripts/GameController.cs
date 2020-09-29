@@ -6,20 +6,30 @@ using UnityEngine.UIElements;
 
 public class GameController : MonoBehaviour
 {
-    public GameObject shadowPanel;
+
     public GameObject upgradeMenuPanel;
+    public GameObject gamePanel;
+    public GameObject BG;
+    public GameObject BG2;
 
     private GameObject AudioManagerObj;
 
 
     private void Start()
     {
+        upgradeMenuPanel.SetActive(false);
+        BG.SetActive(true);
+        BG2.SetActive(false);
+        gamePanel.SetActive(true);
         AudioManagerObj = GameObject.Find("AudioManager");
     }
     public void UpgradeMenuButton()
     {
         upgradeMenuPanel.SetActive(true);
-        shadowPanel.SetActive(true);
+        BG.SetActive(false);
+        BG2.SetActive(true);
+        gamePanel.SetActive(false);
+        
 
         
         AudioManagerObj.GetComponent<AudioManager>().PitchDown();
@@ -28,7 +38,10 @@ public class GameController : MonoBehaviour
     public void CancelMenuButton()
     {
         upgradeMenuPanel.SetActive(false);
-        shadowPanel.SetActive(false);
+        BG.SetActive(true);
+        BG2.SetActive(false);
+        gamePanel.SetActive(true);
+
 
         AudioManagerObj.GetComponent<AudioManager>().PitchUp();
     }

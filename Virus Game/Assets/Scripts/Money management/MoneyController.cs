@@ -1,13 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 public class MoneyController : MonoBehaviour
 {
 
     public float money = 0f;
     [SerializeField] private Text moneyText;
+    [SerializeField] private Text moneyTextUpgrade;
     [SerializeField] private Text apsText;
+    [SerializeField] private Text clickText;
 
     private void Start()
     {
@@ -28,14 +31,14 @@ public class MoneyController : MonoBehaviour
     {
 
         moneyText.text = Camera.main.GetComponent<PricePrintController>().ValuePrintout(money);
-
-
+        moneyTextUpgrade.text = Camera.main.GetComponent<PricePrintController>().ValuePrintout(money);
+        clickText.text = Camera.main.GetComponent<PricePrintController>().ValuePrintout(Camera.main.GetComponent<ClickController>().click);
 
     }
 
     public void ApsPrintout(float aps)
     {
-        apsText.text = "APS : " + aps.ToString();
+        apsText.text = Camera.main.GetComponent<PricePrintController>().ValuePrintout(aps);
     }
 
     public void Buy(float price)

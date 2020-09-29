@@ -35,10 +35,10 @@ public class APSController : MonoBehaviour
     public IEnumerator APSCoroutine()
     {
 
-        Camera.main.GetComponent<MoneyController>().AddMoney(APS);
+        Camera.main.GetComponent<MoneyController>().AddMoney(APS/4);
 
         
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.25f);
         StartCoroutine(APSCoroutine());
     }
 }
